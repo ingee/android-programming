@@ -1,0 +1,58 @@
+{
+  "photos": {
+    "page": 1,
+    "pages": 10,
+    "perpage": 100,
+    "total": 1000,
+    "photo": [
+      {
+        "id": "9452133594",
+        "owner": "44494372@N05",
+        "secret": "d6d20af93e",
+        "server": "7365",
+        "farm": 8,
+        "title": "Low and Wisoff at Work",
+        "ispublic": 1,
+        "isfriend": 0,
+        "is-family": 0,
+        "url_s": "https://images.app.goo.gl/JGx8kLyj25Z3Rmyn7"
+      },
+      {
+        "id": "9452133595",
+        "owner": "44494372@N06",
+        "secret": "d6d20af93f",
+        "server": "7365",
+        "farm": 8,
+        "title": "Challenger as seen from SPAS",
+        "ispublic": 1,
+        "isfriend": 0,
+        "is-family": 0,
+        "url_s": "https://images.app.goo.gl/5puHgQt17qdZf7ky9"
+      },
+      {
+        "id": "9452133596",
+        "owner": "44494372@N07",
+        "secret": "d6d20af940",
+        "server": "7365",
+        "farm": 8,
+        "title": "Do We Live inside a Black Hole?",
+        "ispublic": 1,
+        "isfriend": 0,
+        "is-family": 0,
+        "url_s": "https://images.app.goo.gl/jXWt2bRspgwuyzKt7"
+      },
+      {
+        "id": "9452133597",
+        "owner": "44494372@N08",
+        "secret": "d6d20af941",
+        "server": "7365",
+        "farm": 8,
+        "title": "Black holes — Everything you need to know",
+        "ispublic": 1,
+        "isfriend": 0,
+        "is-family": 0,
+        "url_s": "https://images.app.goo.gl/YHDWRSkmoKC6Y3ay6"
+      }
+    ]
+  }
+}
