@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kapt)
 }
 
 android {
@@ -50,7 +51,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.squareup.retrofit)
-    implementation(libs.squareup.scalars)
+    implementation(libs.squareup.retrofit.converter.moshi)
+    implementation(libs.squareup.moshi)
+    implementation(libs.squareup.moshi.kotlin)
+    kapt(libs.squareup.moshi.kotlin.codegen)
     implementation(libs.squareup.okhttp)
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
