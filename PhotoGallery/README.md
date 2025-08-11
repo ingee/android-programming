@@ -7,8 +7,5 @@ npm start
 ```
 
 # How to config
-```bash
-ifconfig
-    ### Check ip-address of localhost.
-    ### Set it in res/xml/network_security_config.xml
-```
+* 10.0.2.2 is ip address for dev machine's localhost
+* Set the ip address of api server in res/xml/network_security_config.xml
