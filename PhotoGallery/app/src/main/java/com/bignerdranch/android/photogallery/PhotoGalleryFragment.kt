@@ -43,7 +43,7 @@ class PhotoGalleryFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             photoGalleryViewModel.galleryItems.collect { items ->
-                Log.d(TAG, "Response received: $items")
+                binding.photoGrid.adapter = PhotoListAdapter(items)
             }
         }
     }

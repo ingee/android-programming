@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.squareup.okhttp)
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
+    implementation(libs.coil)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
