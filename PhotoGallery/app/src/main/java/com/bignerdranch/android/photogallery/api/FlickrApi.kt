@@ -1,16 +1,12 @@
 package com.bignerdranch.android.photogallery.api
 
 import retrofit2.http.GET
-
-private const val API_KEY = "yourApiKeyHere"
+import retrofit2.http.Query
 
 interface FlickrApi {
-    @GET(
-        "services/rest/?method=flickr.interestringness.getList" +
-            "&api_key=$API_KEY" +
-            "&format=json" +
-            "&nojsoncallback=1" +
-            "&extras=url_s"
-    )
+    @GET("services/rest/?method=flickr.interestringness.getList")
     suspend fun fetchPhotos(): FlickrResponse
+
+    @GET("services/rest/?method=flickr.photos.search")
+    suspend fun searchPhotos(@Query("text") query: String): FlickrResponse
 }
