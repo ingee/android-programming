@@ -70,6 +70,17 @@ class PhotoGalleryFragment : Fragment() {
         })
     }
 
+    @Suppress("DEPRECATION", "OVERRIDE_DEPRECATION")
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_item_clear -> {
+                photoGalleryViewModel.setQuery("")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
