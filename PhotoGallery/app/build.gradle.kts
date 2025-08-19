@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.coroutines.android)
     implementation(libs.coil)
     implementation(libs.androidx.datastore)
+    implementation(libs.androidx.work.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
