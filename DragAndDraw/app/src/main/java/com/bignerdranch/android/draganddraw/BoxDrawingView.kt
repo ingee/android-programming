@@ -1,6 +1,8 @@
 package com.bignerdranch.android.draganddraw
 
 import android.content.Context
+import android.graphics.Canvas
+import android.graphics.Paint
 import android.graphics.PointF
 import android.util.AttributeSet
 import android.util.Log
@@ -16,6 +18,12 @@ class BoxDrawingView(
 
     private var currentBox: Box? = null
     private val boxes = mutableListOf<Box>()
+    private val boxPaint = Paint().apply {
+        color = 0x22ff0000.toInt()
+    }
+    private val backgroundPint = Paint().apply {
+        color = 0xfff8efe0.toInt()
+    }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         val current = PointF(event!!.x, event!!.y)
@@ -49,6 +57,13 @@ class BoxDrawingView(
         currentBox?.let {
             it.end = current
             invalidate()
+        }
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        canvas.drawPaint(backgroundPint)
+        boxes.forEach { box ->
+            canvas.drawRect(box.left, box.top, box.right, box.bottom, boxPaint)
         }
     }
 }
