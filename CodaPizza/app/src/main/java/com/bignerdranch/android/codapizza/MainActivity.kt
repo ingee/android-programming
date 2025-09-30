@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.ui.Modifier
+import com.bignerdranch.android.codapizza.model.Topping
+import com.bignerdranch.android.codapizza.model.ToppingPlacement
 import com.bignerdranch.android.codapizza.ui.ToppingCell
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +22,11 @@ class MainActivity : AppCompatActivity() {
                     .fillMaxSize()
                     .statusBarsPadding()
             ) {
-                ToppingCell()
+                ToppingCell(
+                    topping = Topping.Pepperoni,
+                    placement = ToppingPlacement.Left,
+                    onClickTopping = {}
+                )
             }
         }
     }
