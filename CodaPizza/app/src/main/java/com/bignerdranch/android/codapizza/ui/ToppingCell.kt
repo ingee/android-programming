@@ -52,7 +52,10 @@ fun ToppingCell(
             checked = (placement != null),
             onCheckedChange = { /*TODO*/ }
         )
-        Column {
+        Column(
+            modifier = Modifier.weight(1f, fill = true)
+                .padding(start = 4.dp)
+        ) {
             Text(
                 text = stringResource(topping.toppingName),
                 style = MaterialTheme.typography.body1
