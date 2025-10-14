@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.ui.Modifier
 import com.bignerdranch.android.codapizza.model.Topping
 import com.bignerdranch.android.codapizza.model.ToppingPlacement
+import com.bignerdranch.android.codapizza.ui.PizzaBuilderScreen
 import com.bignerdranch.android.codapizza.ui.ToppingCell
 
 class MainActivity : AppCompatActivity() {
@@ -17,17 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .statusBarsPadding()
-            ) {
-                ToppingCell(
-                    topping = Topping.Pepperoni,
-                    placement = ToppingPlacement.Left,
-                    onClickTopping = {}
-                )
-            }
+            PizzaBuilderScreen()
         }
     }
 }
