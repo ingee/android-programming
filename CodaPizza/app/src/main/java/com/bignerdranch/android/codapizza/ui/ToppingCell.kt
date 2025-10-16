@@ -51,7 +51,7 @@ fun ToppingCell(
     ) {
         Checkbox(
             checked = (placement != null),
-            onCheckedChange = { /*TODO*/ }
+            onCheckedChange = { onClickTopping() }
         )
         Column(
             modifier = Modifier.weight(1f, fill = true)
