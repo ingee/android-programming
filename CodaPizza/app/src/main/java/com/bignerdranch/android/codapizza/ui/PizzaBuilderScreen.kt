@@ -14,6 +14,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -25,8 +26,6 @@ import com.bignerdranch.android.codapizza.R
 import com.bignerdranch.android.codapizza.model.Pizza
 import com.bignerdranch.android.codapizza.model.Topping
 import com.bignerdranch.android.codapizza.model.ToppingPlacement
-
-private var pizza by mutableStateOf(Pizza())
 
 @Preview
 @Composable
@@ -53,6 +52,8 @@ fun PizzaBuilderScreen(
 private fun ToppingList(
     modifier: Modifier = Modifier
 ) {
+    var pizza by remember { mutableStateOf(Pizza()) }
+
     LazyColumn(
         modifier = modifier
     ) {
