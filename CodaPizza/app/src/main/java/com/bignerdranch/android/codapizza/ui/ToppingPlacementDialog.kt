@@ -10,8 +10,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 
 @Composable
-fun ToppingPlacementDialog() {
-    Dialog(onDismissRequest = { /* TODO */ }) {
+fun ToppingPlacementDialog(
+    onDismissRequest: () -> Unit
+) {
+    Dialog(onDismissRequest = onDismissRequest) {
         Box(
             modifier = Modifier
                 .background(Color.Red)

@@ -57,7 +57,15 @@ private fun ToppingList(
     onEditPizza: (Pizza) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    ToppingPlacementDialog()
+    var showToppingPlacementDialog by rememberSaveable { mutableStateOf(false) }
+
+    if (showToppingPlacementDialog) {
+        ToppingPlacementDialog(
+            onDismissRequest = {
+                showToppingPlacementDialog = false
+            }
+        )
+    }
 
     LazyColumn(
         modifier = modifier
@@ -67,15 +75,7 @@ private fun ToppingList(
                 topping = topping,
                 placement = pizza.toppings[topping],
                 onClickTopping = {
-                    val isOnPizza = pizza.toppings[topping] != null
-                    onEditPizza(pizza.withTopping(
-                        topping = topping,
-                        placement = if (isOnPizza) {
-                            null
-                        } else {
-                            ToppingPlacement.All
-                        }
-                    ))
+                    showToppingPlacementDialog = true
                 }
             )
         }
