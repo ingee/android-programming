@@ -57,12 +57,12 @@ private fun ToppingList(
     onEditPizza: (Pizza) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var showToppingPlacementDialog by rememberSaveable { mutableStateOf(false) }
-
-    if (showToppingPlacementDialog) {
+    var toppingBeingAdded by rememberSaveable { mutableStateOf<Topping?>(null) }
+    toppingBeingAdded?.let { topping ->
         ToppingPlacementDialog(
+            topping = topping,
             onDismissRequest = {
-                showToppingPlacementDialog = false
+                toppingBeingAdded = null
             }
         )
     }
@@ -75,7 +75,7 @@ private fun ToppingList(
                 topping = topping,
                 placement = pizza.toppings[topping],
                 onClickTopping = {
-                    showToppingPlacementDialog = true
+                    toppingBeingAdded = topping
                 }
             )
         }
