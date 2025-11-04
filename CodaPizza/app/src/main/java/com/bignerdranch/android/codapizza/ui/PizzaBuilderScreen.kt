@@ -1,5 +1,6 @@
 package com.bignerdranch.android.codapizza.ui
 
+import android.annotation.SuppressLint
 import android.icu.text.NumberFormat
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -7,7 +8,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,6 +28,7 @@ import com.bignerdranch.android.codapizza.model.Pizza
 import com.bignerdranch.android.codapizza.model.Topping
 import com.bignerdranch.android.codapizza.model.ToppingPlacement
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Preview
 @Composable
 fun PizzaBuilderScreen(
@@ -32,23 +36,31 @@ fun PizzaBuilderScreen(
 ) {
     var pizza by rememberSaveable { mutableStateOf(Pizza()) }
 
-    Column(
-        modifier = modifier
-    ) {
-        ToppingList(
-            pizza = pizza,
-            onEditPizza = { pizza = it },
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f, fill = true)
-        )
-        OrderButton(
-            pizza = pizza,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
-        )
-    }
+    Scaffold(
+        modifier = modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text(stringResource(R.string.app_name)) }
+            )
+        },
+        content = {
+            Column {
+                ToppingList(
+                    pizza = pizza,
+                    onEditPizza = { pizza = it },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f, fill = true)
+                )
+                OrderButton(
+                    pizza = pizza,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                )
+            }
+        }
+    )
 }
 
 @Composable
