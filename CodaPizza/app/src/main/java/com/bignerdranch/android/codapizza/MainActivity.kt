@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.ui.Modifier
+import com.bignerdranch.android.codapizza.ui.AppTheme
 import com.bignerdranch.android.codapizza.ui.PizzaBuilderScreen
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +21,9 @@ class MainActivity : AppCompatActivity() {
                     .fillMaxSize()
                     .statusBarsPadding()
             ) {
-                PizzaBuilderScreen()
+                AppTheme {
+                    PizzaBuilderScreen()
+                }
             }
         }
     }
