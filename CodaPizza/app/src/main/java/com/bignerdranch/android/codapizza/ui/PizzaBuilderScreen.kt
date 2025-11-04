@@ -2,6 +2,7 @@ package com.bignerdranch.android.codapizza.ui
 
 import android.annotation.SuppressLint
 import android.icu.text.NumberFormat
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -18,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
@@ -109,10 +111,12 @@ private fun OrderButton(
     pizza: Pizza,
     modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
     Button(
         modifier = modifier,
         onClick = {
-            // TODO
+            Toast.makeText(context, R.string.order_placed_toast, Toast.LENGTH_LONG)
+                .show()
         }
     ) {
         val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
